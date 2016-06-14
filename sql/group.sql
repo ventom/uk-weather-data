@@ -1,0 +1,4 @@
+CREATE TABLE weather_data_grouped (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY)
+	SELECT site_code,site_name, latitude, longitude, region, observation_date, AVG(wind_speed) as wind_speed_avg, MIN(wind_speed) as wind_speed_min, MAX(wind_speed) as wind_speed_max, AVG(visibility) as visibility_avg, MIN(visibility) as visibility_min, MAX(visibility) as visibility_max, AVG(screen_temperature) as screen_temperature_avg, MIN(screen_temperature) as screen_temperature_min, MAX(screen_temperature) as screen_temperature_max, AVG(pressure) as pressure_avg, MIN(pressure) as pressure_min, MAX(pressure) as pressure_max
+	FROM weather_data
+	GROUP BY site_code, observation_date;
